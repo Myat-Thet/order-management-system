@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{masterLayout :: head('Order List')}">
+</head>
+
+<body>
+
+	```
+	<div th:replace="~{masterLayout :: header}"></div>
+
+	<main class="container">
+
+		<div class="page-header">
+			<div>
+				<h1>Order List</h1>
+				<p>Manage your orders</p>
+			</div>
+
+			<a th:href="@{/order}" class="btn btn-primary"> Add Order </a>
+		</div>
+
+		<!-- ====== Search Area ====== -->
+		<div class="search-card">
+
+			<h1>Search &amp; Filter</h1>
+
+			<div class="search-grid">
+
+				<!-- Find by customer -->
+				<form th:action="@{/order/viewOrdersByCustomer}" method="post"
+					class="search-form">
+
+					<label>Customer</label>
+
+					<div class="search-input">
+
+						<input type="text" name="customer" placeholder="Enter Customer"
+							required />
+
+						<button type="submit" class="btn btn-primary">Search</button>
+
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+
+		<!-- ====== Order Table ====== -->
+		<div>
+
+			<table>
+
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Order Date</th>
+						<th>Quantity</th>
+						<th>Total Amount</th>
+						<th>Customer</th>
+						<th>Product</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					<!-- ====== Order Rows ====== -->
+					<tr th:each="order : ${orders}">
+
+						<td th:text="${order.id}"></td>
+
+						<td th:text="${order.orderDate}"></td>
+
+						<td th:text="${order.quantity}"></td>
+
+						<td th:text="${order.totalAmount}"></td>
+
+						<td th:text="${order.customer.name}"></td>
+
+						<td th:text="${order.product.name}"></td>
+
+						<td class="action">
+							<!-- View --> <a th:href="@{/order/view/{id}(id=${order.id})}"
+							class="btn btn-view"> View </a> <!-- Delete -->
+							<form th:action="@{/order/delete/{id}(id=${order.id})}"
+								method="post" class="delete-form">
+
+								<button type="submit" class="btn btn-delete"
+									onclick="return confirm('Are you sure you want to delete this order?')">
+									Delete</button>
+
+							</form>
+
+						</td>
+
+					</tr>
+
+					<!-- ====== Empty ====== -->
+					<tr th:if="${#lists.isEmpty(orders)}">
+
+						<td colspan="7" class="empty-message">No orders found.</td>
+
+					</tr>
+
+				</tbody>
+
+			</table>
+
+		</div>
+		<div>
+			<!-- Total Order -->
+			<a th:href="@{/order/view}" class="btn btn-view"> Total Orders : <span
+				th:text=" ${orderCount} " >  0 </span>
+			</a>
+		</div>
+
+	</main>
+
+	<!-- Footer -->
+	<div th:replace="~{masterLayout :: footer}"></div>
+	```
+
+</body>
+
+</html>

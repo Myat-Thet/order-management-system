@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{masterLayout :: head('Customer Form')}">
+</head>
+<body>
+	<div th:replace="~{masterLayout :: header}"></div>
+
+	<main class="container">
+		<div class="form-card">
+
+			<h1
+				th:text="${customer.id == null} ? 'Add Customer' : 'Update Customer'">
+			</h1>
+
+			<form th:object="${customer}"
+				th:action="${customer.id == null} ? @{/customer/save} : @{/customer/update/{id}(id=${customer.id})}"
+				method="post">
+				<div class="form-group">
+					<label>Customer Name</label> <input type="text" th:field="*{name}"
+						placeholder="Enter customer name" required />
+				</div>
+				<div class="button-group">
+					<button type="submit" class="btn btn-primary" th:text="${customer.id == null} ? 'Save Customer' : 'Update Customer'"></button>
+					<a th:href="@{/customer/view}" class="btn btn-secondary">Cancel</a>
+				</div>
+
+			</form>
+		</div>
+
+	</main>
+
+	<div th:replace="~{masterLayout :: footer}"></div>
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+@charset "UTF-8";
+/* ===============================
+   GLOBAL
+================================ */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f6f9;
+	color: #333;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 18px 8%;
+	background-color: #1f2937;
+}
+
+.logo a {
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+nav {
+	display: flex;
+	gap: 25px;
+}
+
+nav a {
+	color: #e5e7eb;
+	text-decoration: none;
+	font-size: 15px;
+	transition: 0.3s;
+}
+
+nav a:hover {
+	color: white;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================ */
+.container {
+	width: 90%;
+	max-width: 1100px;
+	margin: 50px auto;
+	flex: 1;
+}
+
+/* ===============================
+   PAGE HEADER
+================================ */
+.page-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.page-header h1 {
+	font-size: 30px;
+	margin-bottom: 8px;
+}
+
+.page-header p {
+	color: #6b7280;
+}
+
+/* ===============================
+   FORM CARD
+================================ */
+.form-card {
+	max-width: 500px;
+	margin: auto;
+	background-color: white;
+	padding: 35px;
+	border-radius: 12px;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h1 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+/* ===============================
+   FORM
+================================ */
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	font-size: 15px;
+}
+
+.form-group input:focus {
+	outline: none;
+	border-color: #2563eb;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.button-group {
+	display: flex;
+	gap: 10px;
+	margin-top: 25px;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 18px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 14px;
+	transition: 0.2s;
+}
+
+.btn-primary {
+	background-color: #2563eb;
+	color: white;
+}
+
+.btn-primary:hover {
+	background-color: #1d4ed8;
+}
+
+.btn-secondary {
+	background-color: #e5e7eb;
+	color: #374151;
+}
+
+.btn-secondary:hover {
+	background-color: #d1d5db;
+}
+
+/* ===============================
+   TABLE
+================================ */
+.table-card {
+	background-color: white;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+thead {
+	background-color: #f9fafb;
+}
+
+th {
+	padding: 15px;
+	text-align: left;
+	font-size: 14px;
+	color: #6b7280;
+}
+
+td {
+	padding: 15px;
+	border-top: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+	background-color: #f9fafb;
+}
+
+/* ===============================
+   ACTIONS
+================================ */
+.actions {
+	display: flex;
+	gap: 8px;
+}
+
+.delete-form {
+	display: inline;
+}
+
+.btn-edit {
+	background-color: #f59e0b;
+	color: white;
+}
+
+.btn-edit:hover {
+	background-color: #d97706;
+}
+
+.btn-delete {
+	background-color: #ef4444;
+	color: white;
+}
+
+.btn-delete:hover {
+	background-color: #dc2626;
+}
+
+/* ===============================
+   EMPTY DATA
+================================ */
+.empty-message {
+	text-align: center;
+	padding: 30px;
+	color: #6b7280;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+	text-align: center;
+	padding: 20px;
+	background-color: #1f2937;
+	color: #d1d5db;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media ( max-width : 600px) {
+	.navbar {
+		flex-direction: column;
+		gap: 15px;
+	}
+	nav {
+		gap: 15px;
+	}
+	.page-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+	}
+	.container {
+		width: 95%;
+		margin: 30px auto;
+	}
+	.form-card {
+		padding: 25px;
+	}
+}
+/* ===============================
+   SEARCH CARD
+================================ */
+
+.search-card {
+
+    background-color: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.search-card h3 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.search-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.search-form label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+
+.search-input {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.search-input input {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+}
+
+
+.search-input input:focus {
+
+    outline: none;
+
+    border-color: #2563eb;
+
+}
+
+
+.sort-btn {
+
+    width: 100%;
+
+}
+
+
+/* ===============================
+   VIEW BUTTON
+================================ */
+
+.btn-view {
+
+    background-color: #10b981;
+
+    color: white;
+
+}
+
+
+.btn-view:hover {
+
+    background-color: #059669;
+
+}
+
+
+/* ===============================
+   DETAIL CARD
+================================ */
+
+.detail-card {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+
+.detail-header {
+
+    margin-bottom: 30px;
+
+}
+
+
+.detail-header h1 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.detail-header p {
+
+    color: #6b7280;
+
+}
+
+
+/* ===============================
+   DETAIL CONTENT
+================================ */
+
+.detail-content {
+
+    border-top: 1px solid #e5e7eb;
+
+}
+
+
+.detail-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 18px 5px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+
+.detail-label {
+
+    font-weight: 600;
+
+    color: #6b7280;
+
+}
+
+
+.detail-value {
+
+    font-weight: 500;
+
+    color: #111827;
+
+}
+
+
+/* ===============================
+   RESPONSIVE SEARCH
+================================ */
+
+@media (max-width: 800px) {
+
+    .search-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .detail-card {
+
+        padding: 25px;
+
+    }
+
+
+    .detail-item {
+
+        flex-direction: column;
+
+        gap: 5px;
+
+    }
+
+}

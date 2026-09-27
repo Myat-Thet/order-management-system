@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="UTF-8" name="viewport"
+	content="width=device-width, initial-scale=1.0">
+<title th:text="${title}">Order Management System</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="navbar">
+			<div class="logo">
+				<a th:href="@{/customer/view}">OMS</a>
+			</div>
+			<nav>
+				<a th:href="@{/customer/view}">Customers</a>
+				<a th:href="@{/customer}">Add Customer</a>
+			
+				<a th:href="@{/product/view}">Products</a>
+				<a th:href="@{/product}">Add Product</a>
+				
+				<a th:href="@{/order/view}">Orders</a>
+				<a th:href="@{/order}">Add Order</a>
+			</nav>
+		</div>
+	</header>
+	
+	<footer th:fragment="footer">
+	
+		<p>© 2026 Order Management System</p>	
+	
+	</footer>
+
+</body>
+</html>
